@@ -1,5 +1,9 @@
-import "./css/index.css"
+import "./src/css/index.css"
 import IMask from "imask"
+import swal from 'sweetalert';
+import { holdReady } from "jquery";
+
+
 
 const ccBgColor01 = document.querySelector(".cc-bg svg > g g:nth-child(1) path")
 const ccBgColor02 = document.querySelector(".cc-bg svg > g g:nth-child(2) path")
@@ -73,10 +77,7 @@ const cardNumberPattern = {
 }
 const cardNumberMasked = IMask(cardNumber, cardNumberPattern)
 
-const addButton = document.querySelector("#add-card")
-addButton.addEventListener("click", () => {
-    alert("Cartão adicionado!")
-})
+
 
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault()
@@ -87,6 +88,7 @@ cardHolder.addEventListener("input", () => {
     const ccHolder = document.querySelector(".cc-holder .value")
 
     ccHolder.innerText = cardHolder.value.length === 0 ? "FULANO DA SILVA" : cardHolder.value
+    
 })
 
 securityCodeMasked.on("accept", () =>{
@@ -120,3 +122,5 @@ function updateExpirationDate(date){
     const ccExpiration = document.querySelector(".cc-extra .value")
     ccExpiration.innerText = date.length === 0 ? "02/32" : date
 }
+
+

@@ -40,7 +40,12 @@ form .flex .input-wrapper {
   flex: 1;
 }
 
-form button {
+
+form button:hover {
+  filter: brightness(1.1);
+}
+
+.form {
   margin-top: 1.6rem;
 
   display: flex;
@@ -61,8 +66,4 @@ form button {
   color: #121212;
 
   transition: filter 0.3s;
-}
-
-form button:hover {
-  filter: brightness(1.1);
 }
